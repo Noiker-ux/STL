@@ -1,0 +1,118 @@
+.select {
+  border: 1px solid rgba(197, 197, 197, 0.15);
+  width: 500px;
+  border-radius: 15px;
+  color: var(--white-color);
+  padding: 15px 20px;
+  background-color: #3e3e3e;
+  font-size: 16px;
+  z-index: 3;
+  position: relative;
+  margin-top: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.active {
+  transform: rotate(180deg);
+  transition: all 0.4s ease;
+}
+.activeArrow {
+  transform: rotate(90deg);
+  transition: all 0.4s ease;
+}
+
+.list {
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  overflow-y: scroll;
+  color: var(--white-color);
+  height: 300px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  margin-top: -10px;
+  width: 500px;
+}
+
+.user,
+.follow {
+  padding: 15px 20px;
+  background-color: var(--fill-color);
+  font-size: 16px;
+  border: 1px solid rgba(197, 197, 197, 0.15);
+  cursor: pointer;
+}
+.item {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.user:hover,
+.activeUser,
+.submenu__item:hover {
+  background: #404040;
+}
+.user {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow {
+  position: absolute;
+  right: -300px;
+  width: 300px;
+  top: 0;
+  word-break: break-all;
+}
+.followArrow {
+  transform: rotate(-90deg);
+  transition: all 0.4s ease;
+  width: 10px;
+}
+.followArrowActive {
+  transform: rotate(90deg);
+}
+
+.list::-webkit-scrollbar,
+.submenu::-webkit-scrollbar {
+  width: 3px;
+  position: absolute;
+  right: -15;
+  top: 0;
+}
+.list::-webkit-scrollbar-track,
+.submenu::-webkit-scrollbar-track {
+  background: transparent;
+  padding: 15px 0;
+}
+.list::-webkit-scrollbar-thumb,
+.submenu::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 15px;
+  border: 3px solid #d9d9d9;
+}
+
+.submenu {
+  position: fixed;
+  border-top-right-radius: 15px;
+  width: 526px;
+  border-bottom-left-radius: 15px;
+  border: 1px solid var(--separator-color);
+  border-bottom-right-radius: 15px;
+  color: var(--white-color);
+  background-color: var(--fill-color);
+  height: 200px;
+  overflow-y: scroll;
+  flex-direction: column;
+  display: flex;
+}
+
+.submenu__item {
+  padding: 15px 20px;
+  color: var(--white-color);
+  border: 1px solid rgba(197, 197, 197, 0.15);
+}

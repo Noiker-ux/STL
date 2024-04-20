@@ -1,0 +1,26 @@
+.targetSmall {
+  color: var(--light-gray);
+  font-size: 20px;
+}
+.targetBig {
+  font-size: 24px;
+}
+.valueSmall {
+  margin-top: 5px;
+  display: block;
+  color: var(--white-color);
+  font-size: 20px;
+}
+.valueSmall:hover {
+  text-decoration: underline;
+}
+.targetBig {
+  color: var(--light-gray);
+  font-size: 24px;
+}
+.valueBig {
+  margin-top: 5px;
+  display: block;
+  color: var(--white-color);
+  font-size: 32px;
+}

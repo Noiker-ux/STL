@@ -1,0 +1,69 @@
+.avatar {
+  border-radius: 50%;
+  width: 360px;
+  height: 360px;
+}
+.target {
+  color: var(--light-gray);
+  font-size: 24px;
+}
+.value {
+  margin-top: 5px;
+  color: var(--white-color);
+  font-size: 32px;
+}
+.wrapper__info {
+  display: flex;
+  gap: 121px;
+  margin-bottom: 86px;
+}
+
+.container {
+  padding: 0 139px 0 127px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+.inp {
+  margin-bottom: 20px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #c1c1c1;
+  margin-top: 50px;
+}
+.activePage {
+  color: var(--white-color);
+  font-size: 32px;
+}
+
+.pagCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d9d9d91c;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prevArrow {
+  transform: rotate(90deg);
+  width: 15px;
+}
+.nextArrow {
+  transform: rotate(-90deg);
+  width: 15px;
+}
+.max {
+  opacity: 0.4;
+  cursor: default;
+}

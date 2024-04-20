@@ -1,0 +1,23 @@
+.table {
+  width: 100%;
+  border: 1px solid #858585;
+  display: grid;
+  border-radius: 15px;
+  color: var(--white-color);
+}
+.table__head {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.table__head > p {
+  border-top: 1px solid #858585;
+  border-right: 1px solid #858585;
+  padding: 10px 20px;
+}
+
+.table__head > p:nth-child(-n + 5) {
+  border-top: none;
+}
+.table__head > p:nth-child(5n) {
+  border-right: none;
+}
