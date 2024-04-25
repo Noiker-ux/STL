@@ -13,6 +13,7 @@ import { AppDispatch, RootState } from '../../store/store';
 import { paginationActions } from '../../store/pagination.slice';
 import { UniversalTable } from '../../components/UniversalTable/UniversalTable';
 import { FollowersTable } from '../../components/UniversalTable/SelectedData/FollowersTable';
+import { Pagination } from '../../components/Pagination/Pagination';
 
 export default function DetailPage() {
 	const data = useLoaderData();
@@ -111,6 +112,7 @@ export default function DetailPage() {
 			)}
 
 			<UniversalTable dataFromBack={followers} selectedData={FollowersTable} />
+			<Pagination />
 			{followers && !loading && (
 				<div className={style.wrapper__table}>
 					<div className={style.search}>
