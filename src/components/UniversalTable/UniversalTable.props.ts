@@ -8,5 +8,5 @@ export interface ISelectItem {
 export default interface IUniversalTableProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	selectedData: ISelectItem[];
-	dataFromBack: unknown[];
+	dataFromBack: any[];
 }
