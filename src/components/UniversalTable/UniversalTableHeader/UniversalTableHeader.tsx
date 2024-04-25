@@ -11,7 +11,11 @@ export const UniversalTableHeader = ({
 	return (
 		<div
 			className={classNames('UniversalTableHeader', className)}
-			style={{ gridTemplateColumns: `repeat(${selectedData.length},1fr)` }}
+			style={{
+				gridTemplateColumns: `repeat(${selectedData.length},${
+					100 / selectedData.length
+				}%)`,
+			}}
 			{...props}>
 			{selectedData.map((selectedItem: ISelectItem) => (
 				<div className='UniversalTableHeader__item' key={selectedItem.id}>

@@ -6,5 +6,4 @@ export const FollowersTable: ISelectItem[] = [
 	{ id: 'login', label: 'Nickname' },
 	{ id: 'type', label: 'Type' },
 	{ id: 'site_admin', label: 'Admin' },
-	{ id: 'sasd', label: 'sasd' },
 ];

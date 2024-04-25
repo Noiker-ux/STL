@@ -2,6 +2,7 @@ import IUniversalTableProps from './UniversalTable.props';
 import classNames from 'classnames';
 import { UniversalTableHeader } from './UniversalTableHeader/UniversalTableHeader';
 import { UniversalTableBody } from './UniversalTableBody/UniversalTableBody';
+import './UniversalTable.scss';
 
 export const UniversalTable = ({
 	dataFromBack,

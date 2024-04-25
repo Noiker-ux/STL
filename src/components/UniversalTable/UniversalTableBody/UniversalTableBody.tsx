@@ -12,11 +12,21 @@ export const UniversalTableBody = ({
 		<div
 			className={classNames('UniversalTableBody', className)}
 			{...props}
-			style={{ gridTemplateColumns: `repeat(${selectedData.length},1fr)` }}>
+			style={{
+				gridTemplateColumns: `repeat(${selectedData.length},${
+					100 / selectedData.length
+				}%)`,
+			}}>
 			{dataFromBack &&
 				dataFromBack.map((itemFromBack) => {
-					return selectedData.map((itemSelect) => (
-						<div className='UniversalTableBody__item'>
+					return selectedData.map((itemSelect, index) => (
+						<div
+							className='UniversalTableBody__item'
+							style={
+								index != 0 && selectedData.length % (index + 1) == 0
+									? { borderRight: 'none' }
+									: {}
+							}>
 							{itemFromBack[itemSelect.id] ?? 'Error'}
 						</div>
 					));

@@ -3,10 +3,8 @@
 	color: #fff;
 
 	&__item {
-		border-right: 1px solid red;
+		border-right: 1px solid rgba(247, 247, 247, 0.186);
+		border-top: 1px solid rgba(247, 247, 247, 0.186);
 		padding: 0.5rem 1rem;
-	}
-	&__item:last-child {
-		border-right: none;
 	}
 }
