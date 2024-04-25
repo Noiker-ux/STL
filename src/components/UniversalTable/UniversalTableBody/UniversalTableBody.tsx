@@ -9,27 +9,32 @@ export const UniversalTableBody = ({
 	...props
 }: IUniversalTableProps) => {
 	return (
-		<div
-			className={classNames('UniversalTableBody', className)}
-			{...props}
-			style={{
-				gridTemplateColumns: `repeat(${selectedData.length},${
-					100 / selectedData.length
-				}%)`,
-			}}>
+		<div className={classNames('UniversalTableBody', className)} {...props}>
 			{dataFromBack &&
-				dataFromBack.map((itemFromBack) => {
-					return selectedData.map((itemSelect, index) => (
+				dataFromBack.map((itemFromBack, idx) => {
+					return (
 						<div
-							className='UniversalTableBody__item'
-							style={
-								index != 0 && selectedData.length % (index + 1) == 0
-									? { borderRight: 'none' }
-									: {}
-							}>
-							{itemFromBack[itemSelect.id] ?? 'Error'}
+							key={itemFromBack.id}
+							className='UniversalTableBody__row'
+							style={{
+								gridTemplateColumns: `repeat(${selectedData.length},${
+									100 / selectedData.length
+								}%)`,
+								animationDelay: `${0.125 * idx}s`,
+							}}>
+							{selectedData.map((itemSelect, index) => (
+								<div
+									className='UniversalTableBody__item'
+									style={
+										index != 0 && selectedData.length % (index + 1) == 0
+											? { borderRight: 'none' }
+											: {}
+									}>
+									{itemFromBack[itemSelect.id] ?? 'Error'}
+								</div>
+							))}
 						</div>
-					));
+					);
 				})}
 		</div>
 	);
