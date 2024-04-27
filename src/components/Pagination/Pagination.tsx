@@ -4,6 +4,7 @@ import './Pagination.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { handlePagination } from '../../store/pagination.slice/pagination.slice';
+import { PaginationButton } from './PaginationButton/PaginationButton';
 
 export const Pagination = ({ className, ...props }: IPaginationProps) => {
 	const dispatch = useDispatch<AppDispatch>();
@@ -15,13 +16,25 @@ export const Pagination = ({ className, ...props }: IPaginationProps) => {
 		<div className={classNames('paginationWrapper', className)} {...props}>
 			<button
 				onClick={() =>
-					handlePagination({ nickname: nickname, navigate: 'first', page: 1 })
+					dispatch(
+						handlePagination({
+							nickname: nickname,
+							navigate: 'first',
+							page: 1,
+						}),
+					)
 				}>
 				First
 			</button>
 			<button
 				onClick={() =>
-					handlePagination({ nickname: nickname, navigate: 'prev', page: page })
+					dispatch(
+						handlePagination({
+							nickname: nickname,
+							navigate: 'prev',
+							page: page - 1,
+						}),
+					)
 				}>
 				Prev
 			</button>
@@ -30,21 +43,33 @@ export const Pagination = ({ className, ...props }: IPaginationProps) => {
 					{page}/{countPages}
 				</p>
 			</div>
-			<button
+			<PaginationButton
+				arrow='one'
+				orientation='toRight'
 				onClick={() => {
 					dispatch(
 						handlePagination({
 							nickname: nickname,
 							navigate: 'next',
-							page: page + 1 > countPages ? countPages : page + 1,
+							page: page + 1,
 						}),
 					);
-				}}>
-				Next
-			</button>
-			<button onClick={() => dispatch(handlePagination(nickname, 'last'))}>
-				Last
-			</button>
+				}}
+			/>
+
+			<PaginationButton
+				arrow='two'
+				orientation='toRight'
+				onClick={() =>
+					dispatch(
+						handlePagination({
+							nickname: nickname,
+							navigate: 'last',
+							page: countPages,
+						}),
+					)
+				}
+			/>
 		</div>
 	);
 };

@@ -37,13 +37,14 @@ export const handlePagination = createAsyncThunk(
 
 		if (pagesRemainingLast) {
 			const arrayFromLinks = linkHeader.split(' ');
-			const itemLast =
-				arrayFromLinks.findIndex((itemLink) => itemLink === `rel="last"`) - 1;
-			if (itemLast != -1) {
-				const linkLast = new URL(arrayFromLinks[itemLast].slice(1, -2));
-				const valuePageCount = linkLast.searchParams.get('page');
-				pageCount = Number(valuePageCount) ?? 1;
-			}
+
+			const itemLast = arrayFromLinks.findIndex((itemLink) => {
+				return itemLink.includes(`rel=\"last\"`);
+			});
+			const urlLast = new URL(arrayFromLinks[itemLast - 1].slice(1, -2));
+			pageCount = Number(urlLast.searchParams.get('page')) ?? 1;
+		} else {
+			pageCount = page;
 		}
 
 		return {
