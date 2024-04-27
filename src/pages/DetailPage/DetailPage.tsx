@@ -21,9 +21,7 @@ export default function DetailPage() {
 	const [loading, setLoading] = useState<boolean>(false);
 
 	const dispatch = useDispatch<AppDispatch>();
-	const { countPages, page, following } = useSelector(
-		(s: RootState) => s.pagination,
-	);
+	const { following } = useSelector((s: RootState) => s.pagination);
 
 	const getListFollowers = async (login: string) => {
 		try {
@@ -85,7 +83,7 @@ export default function DetailPage() {
 			)}
 
 			<UniversalTable dataFromBack={following} selectedData={FollowersTable} />
-			<Pagination nickname={data.login} countPages={countPages} />
+			<Pagination />
 		</div>
 	);
 }
