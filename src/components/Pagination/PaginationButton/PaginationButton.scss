@@ -1,9 +1,17 @@
 .arrowNavigation {
-	width: 25px;
-	height: 25px;
+  width: 25px;
+  height: 25px;
+  filter: brightness(2);
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.4s ease;
 }
-.arrowNavigation {
-	background-color: var(--light-gray);
-	border-radius: 50%;
-	padding: 5px;
+
+.arrowNavigation:hover {
+  filter: brightness(1);
+}
+
+.arrowToLeft {
+  transform: rotate(180deg);
 }

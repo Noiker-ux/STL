@@ -67,3 +67,7 @@
   opacity: 0.4;
   cursor: default;
 }
+.paginationFollowing {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
